@@ -33,8 +33,8 @@ def run_training(epochs):
             network.visualize()
     except KeyboardInterrupt:
         for i, layer in enumerate(network.layers):
-            np.save(f"../models/v1/layer_{i}_weights.npy", layer.weights)
-            np.save(f"../models/v1/layer_{i}_biases.npy", layer.biases)
+            np.save(f"../models/v2/layer_{i}_weights.npy", layer.weights)
+            np.save(f"../models/v2/layer_{i}_biases.npy", layer.biases)
         return
 
 if __name__ == "__main__":
