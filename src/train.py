@@ -2,10 +2,10 @@ import numpy as np
 import nnlib as nn
 from utils import load_mnist_csv, shuffle_dataset
 
-network = nn.Network(nn.Losses.softmax_cross_entropy, 784, 128, 2, 10, 1280, 650)
-network.add(nn.Layer(784, 128, nn.Activations.relu))
-network.add(nn.Layer(128, 128, nn.Activations.relu))
-network.add(nn.Layer(128, 10, nn.Activations.linear))
+network = nn.Network(nn.Losses.softmax_cross_entropy)
+network.add(nn.Layer(784, 128, nn.Activations.relu, nn.WeightInitializers.he))
+network.add(nn.Layer(128, 128, nn.Activations.relu, nn.WeightInitializers.he))
+network.add(nn.Layer(128, 10, nn.Activations.linear, nn.WeightInitializers.xavier))
 
 images, labels = load_mnist_csv("../data/mnist_train.csv")
 
@@ -30,7 +30,7 @@ def run_training(epochs):
                 network.update(current_lr)
                 if network.screen:
                     network.check_pygame_events()
-            network.visualize()
+            network.visualize(784, 128, 2, 10, 1280, 650)
     except KeyboardInterrupt:
         for i, layer in enumerate(network.layers):
             np.save(f"../models/v2/layer_{i}_weights.npy", layer.weights)
