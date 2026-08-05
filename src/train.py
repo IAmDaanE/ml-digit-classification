@@ -17,7 +17,7 @@ def run_training(epochs):
     try:
         for epoch in range(epochs):
             network.epoch = epoch
-            current_lr = nn.LrDecays.exponential_decay(current_lr, 0.955)
+            current_lr = nn.LrDecays.exponential_decay(current_lr, 0.96)
             network.current_lr = current_lr
             images, labels = shuffle_dataset(images, labels)
             for i in range(0, images.shape[0], batch_size):
@@ -30,7 +30,7 @@ def run_training(epochs):
                 network.update(current_lr)
                 if network.screen:
                     network.check_pygame_events()
-            network.visualize(784, 128, 2, 10, 1280, 650)
+            network.visualize(784, 128, 2, 10, 1280, 650, "stretched")
     except KeyboardInterrupt:
         for i, layer in enumerate(network.layers):
             np.save(f"../models/v2/layer_{i}_weights.npy", layer.weights)
