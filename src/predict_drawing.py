@@ -41,6 +41,7 @@ confidence_bar_x = 28 * virtual_pixel_size + 3
 running = True
 
 while running:
+    # event loop
     for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
@@ -61,17 +62,20 @@ while running:
         right_pix = cords_to_array((matrix_location[0] + 1, matrix_location[1]))
         bottom_pix = cords_to_array((matrix_location[0], matrix_location[1] + 1))
         left_pix = cords_to_array((matrix_location[0] - 1, matrix_location[1]))
-
-        if int(pixelmatrix[center_pix]) == 0:
+        if center_pix >= 0 and center_pix < 784:
             pixelmatrix[center_pix] = 1.0
-        if int(pixelmatrix[top_pix]) == 0:
-            pixelmatrix[top_pix] = random.uniform(0.31, 0.78)
-        if int(pixelmatrix[right_pix]) == 0:
-            pixelmatrix[right_pix] = random.uniform(0.31, 0.78)
-        if int(pixelmatrix[bottom_pix]) == 0:
-            pixelmatrix[bottom_pix] = random.uniform(0.31, 0.78)
-        if int(pixelmatrix[left_pix]) == 0:
-            pixelmatrix[left_pix] = random.uniform(0.31, 0.78)
+        if top_pix >= 0 and top_pix < 784:
+            if pixelmatrix[top_pix] == 0.0:
+                pixelmatrix[top_pix] = random.uniform(0.31, 0.78)
+        if right_pix >= 0 and right_pix < 784:
+            if pixelmatrix[right_pix] == 0.0:
+                pixelmatrix[right_pix] = random.uniform(0.31, 0.78)
+        if bottom_pix >= 0 and bottom_pix < 784:
+            if pixelmatrix[bottom_pix] == 0.0:
+                pixelmatrix[bottom_pix] = random.uniform(0.31, 0.78)
+        if left_pix >= 0 and left_pix < 784:
+            if pixelmatrix[left_pix] == 0.0:
+                pixelmatrix[left_pix] = random.uniform(0.31, 0.78)
 
     # ai logic
     if not empty:
