@@ -12,7 +12,7 @@ A neural network algorithm that recognizes and classifies hand drawn digits. Wri
 
 This repo contains a python file to train the image classification algorithm, two pretrained models and an environment where you can draw a digit and see what the model thinks it is. I used the freely available MNIST dataset which contains 70.000 labeled greyscale images (60.000 for training and 10.000 for testing). To make it easier to load in and download i used a CSV format one [from Kaggle](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv). 
 
-The neural network for my models has 3 hidden layers with a size 128 nodes and uses relu activation for the hidden layers and softmax for the output layer, which makes all outputs positive and boosts the big confident ones. The loss function is cross entropy loss which is usually implemented with softmax.
+The neural network for my models has 3 hidden layers with a size 128 nodes, uses relu activation for the hidden layers and softmax for the output layer, which makes all outputs positive and boosts the big confident ones. The loss function is cross entropy loss which is usually implemented with softmax.
 
 ## Project Structure
 
