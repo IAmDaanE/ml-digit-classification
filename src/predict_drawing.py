@@ -1,4 +1,4 @@
-import nnlib as nn
+import nnlib_py as nn
 import numpy as np
 import pygame
 import math

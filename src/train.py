@@ -1,5 +1,5 @@
 import numpy as np
-import nnlib as nn
+import nnlib_py as nn
 from utils import load_mnist_csv, shuffle_dataset
 
 network = nn.Network(nn.Losses.softmax_cross_entropy)
