@@ -51,7 +51,7 @@ python src/predict_drawing.py
 
 ### Training Your Own Model
 
-The actual dataset isnt in this repo because its way to big for a github repository but you can download mnist_train.csv and mnist_test.csv [from this kaggle page](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv). Then configure your wanted parameters in train.py. When you are happy with the amount of loss during training press Ctrl + C to quit training and save the weights and biases.
+The actual dataset isnt in this repo because its way to big for a github repository but you can download mnist_train.csv and mnist_test.csv [from this kaggle page](https://www.kaggle.com/datasets/oddrationale/mnist-in-csv). Then configure your wanted parameters in train.py. When you are happy with the amount of loss during training press Ctrl + C to quit training and to save the weights and biases.
 
 ## License
 
