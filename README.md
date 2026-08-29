@@ -5,6 +5,7 @@ A neural network algorithm that recognizes and classifies hand-drawn digits. Wri
 ---
 
 <img width="743" height="590" alt="MNIST Drawing Environment" src="https://github.com/user-attachments/assets/55823e0d-9652-4b92-af39-814db965db86" />
+
 *The interactive drawing environment*
 
 ## About the Project
